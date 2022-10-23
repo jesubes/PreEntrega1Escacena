@@ -1,0 +1,9 @@
+.cartWidget__icon{
+    color: rgb(51, 148, 165);
+    font-size: 1.2rem;
+}
+
+.cartWidget__icon :hover{
+    color: rgb(37, 255, 226);
+    font-size: 1.3rem;
+}

@@ -1,0 +1,30 @@
+.navBar{
+    background-color: rgb(255, 187, 61);
+}
+
+.navBar__menu{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.navBar__listado{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 60vh;
+}
+
+li {
+    list-style-type: none;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+li :hover{
+    color: rgb(14, 211, 211);
+    font-weight: bold;
+}
