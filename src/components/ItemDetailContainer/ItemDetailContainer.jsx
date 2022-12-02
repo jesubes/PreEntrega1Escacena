@@ -1,14 +1,17 @@
 import React, {useState, useEffect} from "react";
-import FlexWrapper from "../FlexWrapper/FlexWrapper";
 
-import Item from "../Item/Item";
+
+
 import {getSingleItemFromAPI} from "../../mockService/GetItemsFromAPI";
 import { useParams } from "react-router-dom";
 import "./itemDetailContainer.css";
 
+import ItemDetail from "./ItemDetail";
+
 
 function ItemDetailContainer () {
     const [product, setProduct] = useState([]);
+    const [isLoading, setIsLoading] = useState(true)
 
     let params = useParams();
     let id = params.id;
@@ -19,15 +22,15 @@ function ItemDetailContainer () {
                 console.log(itemsDB);
                 setProduct(itemsDB)
             })
+            .finally(() => setIsLoading(false))
         }, [id]
     )
+    
+    if (isLoading) return <h2>Cargando...</h2>
 
     return (
-        <div className="card-detail">
-                <img src={product.img} alt="Product img" width="280px"/>
-            <h2>{product.title}</h2>
-            <p>{product.descripcion}</p>
-            <h4>${product.precio}</h4>
+        <div>
+            <ItemDetail product={product}/>
         </div>
         
     )

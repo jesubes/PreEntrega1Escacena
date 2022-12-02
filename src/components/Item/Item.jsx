@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import products from "../../data/products";
+
 import Button from "../Button/Button"
 import './item.css'
 
