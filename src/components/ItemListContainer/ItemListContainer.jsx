@@ -1,6 +1,9 @@
 import React, {useState, useEffect} from "react";
 import ItemList from "./ItemList";
-import GetItemsFromAPI, {getItemsFromAPIByCategory} from "../../mockService/GetItemsFromAPI";
+import {getItemsFromAPIByCategory} from "../../mockService/GetItemsFromAPI";
+
+import { GetItemsFromAPI } from "../../services/firebase";
+
 import {useParams} from "react-router-dom"
 import "./ItemListContainer.css";
 
@@ -9,7 +12,7 @@ import "./ItemListContainer.css";
 function ItemListContainer(props) {
     const [productsList, setProductsList] = useState([]);
     const {categoryid} = useParams();
-    const [isLoading, setIsLoading] = useState(true)
+    const [isLoading, setIsLoading] = useState()
 
 
     useEffect(

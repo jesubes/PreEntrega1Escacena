@@ -7,8 +7,11 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 import { CartContextProvider } from './storage/CartContext';
 import CartView from './components/CartView/CartView';
 
+import { testDatabase } from "./services/firebase"
 
 function App() {
+  testDatabase();
+
   return (
     <div className="App">
       <CartContextProvider>

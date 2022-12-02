@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 
 
 
-import {getSingleItemFromAPI} from "../../mockService/GetItemsFromAPI";
+import { getSingleItemFromAPI } from "../../services/firebase";
 import { useParams } from "react-router-dom";
 import "./itemDetailContainer.css";
 
