@@ -35,10 +35,24 @@ export function CartContextProvider (props) {
         return total;
     }
 
+    function totalPriceInCart(){
+        let totalPrice = 0;
+        cart.forEach(itemsInCart => {
+            totalPrice = totalPrice + itemsInCart.count * itemsInCart.precio;
+        })
+        return totalPrice;
+    }
+
+    function clear(){
+        setCart([])
+    }
+
     const value = {
         cart,
         addToCart,
-        totalItemsInCart
+        totalItemsInCart,
+        totalPriceInCart,
+        clear
     }
 
     return (

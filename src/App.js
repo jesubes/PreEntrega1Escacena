@@ -7,7 +7,7 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 import { CartContextProvider } from './storage/CartContext';
 import CartView from './components/CartView/CartView';
 
-import { testDatabase } from "./services/firebase"
+import { testDatabase, exportItemsToFirestore } from "./services/firebase"
 
 function App() {
   testDatabase();
@@ -32,6 +32,9 @@ function App() {
             />
             <Route 
               path='/cart' element={ <CartView/> } 
+            />
+            <Route path='/checkout/:orderid' 
+              element={<h1>Gracias por tu Compra</h1>}
             />
             <Route 
               path='*' element={<h1>404: Ruta No Encontrada</h1>}
